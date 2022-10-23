@@ -5,10 +5,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
+import androidx.navigation.Navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.defalt.cryptocoinex.R
 import com.defalt.cryptocoinex.databinding.CurrencyItemLayoutBinding
+import com.defalt.cryptocoinex.fragment.HomeFragmentDirections
 import com.defalt.cryptocoinex.model.CryptoCurrency
 
 class MarketAdapter(var context : Context, var list : List<CryptoCurrency>) : RecyclerView.Adapter<MarketAdapter.MarketViewHolder>(){
@@ -46,6 +48,13 @@ class MarketAdapter(var context : Context, var list : List<CryptoCurrency>) : Re
             holder.binding.currencyChangeTextView.setTextColor(ContextCompat.getColor(context,R.color.red))
             holder.binding.currencyChangeTextView.text = "${String.format("%.2f",item.quotes[0].percentChange24h)} %"
         }
+
+        holder.itemView.setOnClickListener {
+            findNavController(it).navigate(
+                HomeFragmentDirections.actionHomeFragment2ToDetailsFragment(item)
+            )
+        }
+
     }
 
     override fun getItemCount(): Int {

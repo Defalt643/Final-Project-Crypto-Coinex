@@ -9,7 +9,11 @@
         android:id="@+id/homeFragment2"
         android:name="com.defalt.cryptocoinex.fragment.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment2_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/marketFragment2"
         android:name="com.defalt.cryptocoinex.fragment.MarketFragment"
@@ -19,4 +23,13 @@
         android:id="@+id/watchlistFragment2"
         android:name="com.defalt.cryptocoinex.fragment.WatchlistFragment"
         android:label="WatchlistFragment" />
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="com.defalt.cryptocoinex.fragment.DetailsFragment"
+        android:label="DetailsFragment" >
+        <argument
+            android:name="data"
+            app:argType="com.defalt.cryptocoinex.model.CryptoCurrency"
+            app:nullable="true" />
+    </fragment>
 </navigation>
