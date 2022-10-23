@@ -33,10 +33,10 @@ class TopMarketAdapter(var context : Context, val list:List<CryptoCurrency>) :Re
 
         if (item.quotes!![0].percentChange24h > 0){
             holder.binding.topCurrencyChangeTextView.setTextColor(ContextCompat.getColor(context,R.color.green))
-            holder.binding.topCurrencyChangeTextView.text = "+ ${item.quotes[0].percentChange24h} %"
+            holder.binding.topCurrencyChangeTextView.text = "+ ${String.format("%.2f",item.quotes[0].percentChange24h)} %"
         }else{
             holder.binding.topCurrencyChangeTextView.setTextColor(ContextCompat.getColor(context,R.color.red))
-            holder.binding.topCurrencyChangeTextView.text = "${item.quotes[0].percentChange24h} %"
+            holder.binding.topCurrencyChangeTextView.text = "${String.format("%.2f",item.quotes[0].percentChange24h)} %"
         }
     }
 
