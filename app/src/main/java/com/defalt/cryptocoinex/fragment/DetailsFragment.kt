@@ -90,7 +90,7 @@ class DetailsFragment : Fragment() {
         binding.detaillChartWebView.settings.javaScriptEnabled = true
         binding.detaillChartWebView.setLayerType(View.LAYER_TYPE_SOFTWARE, null)
         binding.detaillChartWebView.loadUrl(
-            "https://s.tradingview.com/widgetembed..." + item.symbol.toString()
+            "https://s.tradingview.com/widgetembed/?frameElementId=tradingview_76d87&symbol=" + item.symbol.toString()
                     + "USD&interval=" + s + "&hidesidetoolbar=1&hidetoptoolbar=1&symboledit=1&saveimage=1&toolbarbg=F1F3F6&studies=[]"
                     + "&hideideas=1&theme=Dark&style=1&timezone=Etc%2FUTC&studies_overrides={}&overrides={}&enabled_features=[]&disabled_features=[]"
                     + "&locale=en&utm_source=coinmarketcap.com&utm_medium=widget&utm_campaign=chart&utm_term=BTCUSDT"
@@ -116,7 +116,7 @@ class DetailsFragment : Fragment() {
         binding.detaillChartWebView.settings.javaScriptEnabled = true
         binding.detaillChartWebView.setLayerType(View.LAYER_TYPE_SOFTWARE, null)
         binding.detaillChartWebView.loadUrl(
-            "https://s.tradingview.com/widgetembed..." + item.symbol.toString()
+            "https://s.tradingview.com/widgetembed/?frameElementId=tradingview_76d87&symbol=" + item.symbol.toString()
                     + "USD&interval=D&hidesidetoolbar=1&hidetoptoolbar=1&symboledit=1&saveimage=1&toolbarbg=F1F3F6&studies=[]"
                     + "&hideideas=1&theme=Dark&style=1&timezone=Etc%2FUTC&studies_overrides={}&overrides={}&enabled_features=[]&disabled_features=[]"
                     + "&locale=en&utm_source=coinmarketcap.com&utm_medium=widget&utm_campaign=chart&utm_term=BTCUSDT"

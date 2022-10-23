@@ -30,6 +30,8 @@ class MainActivity : AppCompatActivity() {
         popupMenu.inflate(R.menu.bottom_nav_menu)
         binding.bottomBar.setupWithNavController(popupMenu.menu, navController)
 
+//        replaceCurrentFragment(MarketFragment())
+
 //        val navBar = findViewById<NavigationBarView>(R.id.bottomBar)
 //        navBar.setOnItemSelectedListener { id ->
 //            when(id.itemId){
