@@ -34,7 +34,7 @@ class MarketAdapter(var context : Context, var list : List<CryptoCurrency>) : Re
         Glide.with(context).load(
             "https://s3.coinmarketcap.com/generated/sparklines/web/7d/usd/" + item.id + ".png"
         ).thumbnail(Glide.with(context).load(R.drawable.spinner))
-            .into(holder.binding.currencyImageView)
+            .into(holder.binding.currencyChartImageView)
 
         holder.binding.currencyPriceTextView.text = "${String.format("$%.2f",item.quotes[0].price)}"
 
