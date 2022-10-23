@@ -16,20 +16,37 @@
         app:layout_constraintBottom_toBottomOf="@id/bottomBar"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <me.ibrahimsn.lib.SmoothBottomBar
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomBar"
         android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:elevation="12dp"
-        app:iconMargin="8dp"
-        app:iconSize="24dp"
-        app:backgroundColor="@color/royal_blue_dark"
-        app:indicatorRadius="8dp"
-        app:textSize="14sp"
-        app:itemFontFamily="@font/nunito_semibold"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:scrollIndicators="left"
+        android:background="@color/royal_blue_dark"
+        app:itemTextColor="@color/white"
+        android:outlineAmbientShadowColor="@color/white"
+        android:outlineSpotShadowColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/bottom_nav_menu" />
+
+<!--    <me.ibrahimsn.lib.SmoothBottomBar-->
+<!--        android:id="@+id/bottomBar"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="56dp"-->
+<!--        android:elevation="12dp"-->
+<!--        app:iconMargin="8dp"-->
+<!--        app:iconSize="24dp"-->
+<!--        app:backgroundColor="@color/royal_blue_dark"-->
+<!--        app:indicatorRadius="8dp"-->
+<!--        app:textSize="14sp"-->
+<!--        app:itemFontFamily="@font/nunito_semibold"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:menu="@menu/bottom_nav_menu" />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
