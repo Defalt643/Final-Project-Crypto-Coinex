@@ -36,7 +36,8 @@ class MarketAdapter(var context : Context, var list : List<CryptoCurrency>) : Re
         ).thumbnail(Glide.with(context).load(R.drawable.spinner))
             .into(holder.binding.currencyImageView)
 
-        holder.binding.currencyPriceTextView.text = item.quotes[0].price.toString()
+        holder.binding.currencyPriceTextView.text = "${String.format("$%.2f",item.quotes[0].price)}"
+
 
         if (item.quotes!![0].percentChange24h > 0){
             holder.binding.currencyChangeTextView.setTextColor(ContextCompat.getColor(context,R.color.green))

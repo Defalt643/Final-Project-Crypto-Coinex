@@ -5,7 +5,7 @@ import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.defalt.cryptocoinex.fragment.TopLossGainFragment
 
-class TopLossGainAdapter(fragment : Fragment) : FragmentStateAdapter(fragment) {
+class TopLossGainPagerAdapter(fragment : Fragment) : FragmentStateAdapter(fragment) {
     override fun getItemCount(): Int {
         return 2
     }

@@ -1,6 +1,5 @@
 package com.defalt.cryptocoinex.fragment
 
-import android.opengl.Visibility
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -11,8 +10,7 @@ import android.view.View.VISIBLE
 import android.view.ViewGroup
 import androidx.lifecycle.lifecycleScope
 import androidx.viewpager2.widget.ViewPager2
-import com.defalt.cryptocoinex.R
-import com.defalt.cryptocoinex.adapter.TopLossGainAdapter
+import com.defalt.cryptocoinex.adapter.TopLossGainPagerAdapter
 import com.defalt.cryptocoinex.adapter.TopMarketAdapter
 import com.defalt.cryptocoinex.api.ApiInterface
 import com.defalt.cryptocoinex.api.ApiUtilities
@@ -41,7 +39,7 @@ class HomeFragment : Fragment() {
     }
 
     private fun setTabLayout() {
-        val adapter = TopLossGainAdapter(this)
+        val adapter = TopLossGainPagerAdapter(this)
         binding.contentViewPager.adapter = adapter
 
         binding.contentViewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback(){
