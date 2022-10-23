@@ -13,6 +13,7 @@
         android:elevation="12dp"
         app:iconMargin="8dp"
         app:iconSize="24dp"
+        app:backgroundColor="@color/royal_blue_dark"
         app:indicatorRadius="8dp"
         app:textSize="14sp"
         app:itemFontFamily="@font/nunito_semibold"
