@@ -48,4 +48,5 @@ dependencies {
 
     implementation 'com.github.ibrahimsn98:SmoothBottomBar:1.7.9'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0'
+    implementation 'com.github.ybq:Android-SpinKit:1.4.0' // Loading
 }
