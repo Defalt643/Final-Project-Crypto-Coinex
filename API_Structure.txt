@@ -1,0 +1,13 @@
+==================================| Don't Count Credit| ==================================
+api.coinmarketcap.com/data-api/v3/cryptocurrency/listing?start=1&limit=500&convert=THB //JSON
+
+s2.coinmarketcap.com/static/img/coins/64x64/ + imageID + .png //Image
+
+=====================================| Count Credit| =====================================
+
+pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?start=1&limit=10&convert=THB //JSON
+
+API_KEY = 3791046c-f499-4a0c-ac8a-01c819bb7a61
+API_KEY_TEST = b54bcf4d-1bca-4e8e-9a24-22ff2c3d462c
+
+API_AUTH_HEADER = X-CMC_PRO_API_KEY
