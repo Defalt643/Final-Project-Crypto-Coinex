@@ -8,12 +8,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.lifecycleScope
 import com.defalt.cryptocoinex.R
+import com.defalt.cryptocoinex.adapter.TopMarketAdapter
 import com.defalt.cryptocoinex.api.ApiInterface
 import com.defalt.cryptocoinex.api.ApiUtilities
 
 import com.defalt.cryptocoinex.databinding.FragmentHomeBinding
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class HomeFragment : Fragment() {
 
@@ -35,6 +37,10 @@ class HomeFragment : Fragment() {
     private fun getTopCurrencyList() {
         lifecycleScope.launch(Dispatchers.IO){
             val res = ApiUtilities.getInstance().create(ApiInterface::class.java).getMarketData()
+
+            withContext(Dispatchers.Main){
+                binding.topCurrencyRecyclerView.adapter = TopMarketAdapter(requireContext(), res.body()!!.data.cryptoCurrencyList)
+            }
 
             Log.d("getTopCurrencyList", "getTopCurrencyList: ${res.body()!!.data.cryptoCurrencyList}")
         }
