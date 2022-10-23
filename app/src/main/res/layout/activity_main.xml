@@ -10,10 +10,11 @@
         android:id="@+id/fragmentContainerView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:name="androidx.navigation.fragment.NavHostFragment"
         app:navGraph="@navigation/nav_graph"
         app:defaultNavHost="true"
         app:layout_constraintBottom_toBottomOf="@id/bottomBar"
-        app:layout_constraintTop_toTopOf="parent"></androidx.fragment.app.FragmentContainerView>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <me.ibrahimsn.lib.SmoothBottomBar
         android:id="@+id/bottomBar"
