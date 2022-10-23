@@ -6,4 +6,5 @@
     <string name="market_fragment">Market Fragment</string>
     <string name="not_found">Not Found</string>
     <string name="search_hint">Search Coin</string>
+    <string name="empty_watchlist">Watchlist is empty</string>
 </resources>
