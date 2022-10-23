@@ -3,10 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/homeFragment2">
+    app:startDestination="@id/homeFragment">
 
     <fragment
-        android:id="@+id/homeFragment2"
+        android:id="@+id/homeFragment"
         android:name="com.defalt.cryptocoinex.fragment.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
@@ -15,12 +15,12 @@
             app:destination="@id/detailsFragment" />
     </fragment>
     <fragment
-        android:id="@+id/marketFragment2"
+        android:id="@+id/marketFragment"
         android:name="com.defalt.cryptocoinex.fragment.MarketFragment"
         android:label="fragment_market"
         tools:layout="@layout/fragment_market" />
     <fragment
-        android:id="@+id/watchlistFragment2"
+        android:id="@+id/watchlistFragment"
         android:name="com.defalt.cryptocoinex.fragment.WatchlistFragment"
         android:label="WatchlistFragment" />
     <fragment
