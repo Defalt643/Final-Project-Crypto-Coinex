@@ -11,9 +11,10 @@ import com.bumptech.glide.Glide
 import com.defalt.cryptocoinex.R
 import com.defalt.cryptocoinex.databinding.CurrencyItemLayoutBinding
 import com.defalt.cryptocoinex.fragment.HomeFragmentDirections
+import com.defalt.cryptocoinex.fragment.MarketFragmentDirections
 import com.defalt.cryptocoinex.model.CryptoCurrency
 
-class MarketAdapter(var context : Context, var list : List<CryptoCurrency>) : RecyclerView.Adapter<MarketAdapter.MarketViewHolder>(){
+class MarketAdapter(var context: Context, var list: List<CryptoCurrency>,var type: String) : RecyclerView.Adapter<MarketAdapter.MarketViewHolder>(){
 
     inner class MarketViewHolder(view: View) : RecyclerView.ViewHolder(view){
         var binding = CurrencyItemLayoutBinding.bind(view)
@@ -55,9 +56,15 @@ class MarketAdapter(var context : Context, var list : List<CryptoCurrency>) : Re
         }
 
         holder.itemView.setOnClickListener {
-            findNavController(it).navigate(
-                HomeFragmentDirections.actionHomeFragment2ToDetailsFragment(item)
-            )
+                if(type == "home"){
+                    findNavController(it).navigate(
+                        HomeFragmentDirections.actionHomeFragment2ToDetailsFragment(item))
+                }else if (type == "market"){
+                    findNavController(it).navigate(
+                        MarketFragmentDirections.actionMarketFragmentToDetailsFragment(item))
+                }
+
+
         }
 
     }

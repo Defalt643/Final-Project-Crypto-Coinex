@@ -18,11 +18,19 @@
         android:id="@+id/marketFragment"
         android:name="com.defalt.cryptocoinex.fragment.MarketFragment"
         android:label="fragment_market"
-        tools:layout="@layout/fragment_market" />
+        tools:layout="@layout/fragment_market" >
+        <action
+            android:id="@+id/action_marketFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/watchlistFragment"
         android:name="com.defalt.cryptocoinex.fragment.WatchlistFragment"
-        android:label="WatchlistFragment" />
+        android:label="WatchlistFragment" >
+        <action
+            android:id="@+id/action_watchlistFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/detailsFragment"
         android:name="com.defalt.cryptocoinex.fragment.DetailsFragment"

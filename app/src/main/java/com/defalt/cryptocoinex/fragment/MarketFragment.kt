@@ -8,10 +8,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.View.GONE
-import android.view.View.VISIBLE
 import android.view.ViewGroup
 import androidx.lifecycle.lifecycleScope
-import com.defalt.cryptocoinex.R
 import com.defalt.cryptocoinex.adapter.MarketAdapter
 import com.defalt.cryptocoinex.api.ApiInterface
 import com.defalt.cryptocoinex.api.ApiUtilities
@@ -38,7 +36,7 @@ class MarketFragment : Fragment() {
         binding = FragmentMarketBinding.inflate(layoutInflater)
 
         list = listOf()
-        adapter = MarketAdapter(requireContext(),list)
+        adapter = MarketAdapter(requireContext(),list,"market")
         binding.currencyRecyclerView.adapter = adapter
 
         lifecycleScope.launch(Dispatchers.IO){
