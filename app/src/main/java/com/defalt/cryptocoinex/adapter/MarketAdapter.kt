@@ -12,6 +12,8 @@ import com.defalt.cryptocoinex.R
 import com.defalt.cryptocoinex.databinding.CurrencyItemLayoutBinding
 import com.defalt.cryptocoinex.fragment.HomeFragmentDirections
 import com.defalt.cryptocoinex.fragment.MarketFragmentDirections
+import com.defalt.cryptocoinex.fragment.WatchlistFragment
+import com.defalt.cryptocoinex.fragment.WatchlistFragmentDirections
 import com.defalt.cryptocoinex.model.CryptoCurrency
 
 class MarketAdapter(var context: Context, var list: List<CryptoCurrency>,var type: String) : RecyclerView.Adapter<MarketAdapter.MarketViewHolder>(){
@@ -62,6 +64,10 @@ class MarketAdapter(var context: Context, var list: List<CryptoCurrency>,var typ
                 }else if (type == "market"){
                     findNavController(it).navigate(
                         MarketFragmentDirections.actionMarketFragmentToDetailsFragment(item))
+                }else if( type == "watchFrag"){
+                    findNavController(it).navigate(
+                        WatchlistFragmentDirections.actionWatchlistFragmentToDetailsFragment(item)
+                    )
                 }
 
 
