@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.widget.AppCompatButton
 import androidx.core.content.ContextCompat
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
 import com.defalt.cryptocoinex.R
@@ -32,6 +33,12 @@ class DetailsFragment : Fragment() {
         setUpDetail(data)
         loadChart(data)
         setButtonClick(data)
+
+        binding.backStackButton.setOnClickListener {
+            findNavController().navigate(
+                DetailsFragmentDirections.actionDetailsFragmentToMarketFragment()
+            )
+        }
 
         return binding.root
     }
