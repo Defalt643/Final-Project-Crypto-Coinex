@@ -75,6 +75,7 @@ class HomeFragment : Fragment() {
                 binding.topCurrencyRecyclerView.adapter = TopMarketAdapter(requireContext(), res.body()!!.data.cryptoCurrencyList)
             }
 
+
             Log.d("getTopCurrencyList", "getTopCurrencyList: ${res.body()!!.data.cryptoCurrencyList}")
         }
     }

@@ -23,6 +23,11 @@ class MarketAdapter(var context : Context, var list : List<CryptoCurrency>) : Re
         return MarketViewHolder(LayoutInflater.from(context).inflate(R.layout.currency_item_layout, parent, false))
     }
 
+    fun updateData(dataItem: List<CryptoCurrency>){
+        list = dataItem
+        notifyDataSetChanged()
+    }
+
     override fun onBindViewHolder(holder: MarketViewHolder, position: Int) {
         val item = list[position]
         holder.binding.currencyNameTextView.text = item.name
