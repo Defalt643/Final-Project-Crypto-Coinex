@@ -1,13 +1,20 @@
 package com.defalt.cryptocoinex.fragment
 
+import android.app.Notification
+import android.app.NotificationChannel
+import android.app.NotificationManager
 import android.content.Context
+import android.graphics.Color
+import android.os.Build
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.widget.AppCompatButton
+import androidx.core.app.NotificationCompat
 import androidx.core.content.ContextCompat
+import androidx.core.content.ContextCompat.getSystemService
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
@@ -16,10 +23,17 @@ import com.defalt.cryptocoinex.databinding.FragmentDetailsBinding
 import com.defalt.cryptocoinex.model.CryptoCurrency
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
+import java.lang.StringBuilder
 
 class DetailsFragment : Fragment() {
 
     lateinit var binding: FragmentDetailsBinding
+//    lateinit var notificationManager: NotificationManager
+//    lateinit var notificationOnChannel: NotificationChannel
+//    lateinit var builder: Notification.Builder
+    private val channelId = "com.defalt.cryptocoinex.fragment"
+    private val notificaionId = 101
+    private val description = "Test notification"
 
     private val item : DetailsFragmentArgs by navArgs()
 
@@ -34,6 +48,7 @@ class DetailsFragment : Fragment() {
 
         setUpDetail(data)
         loadChart(data)
+//        setNotification(data)
         setButtonClick(data)
         addToWatchList(data)
 
@@ -45,6 +60,30 @@ class DetailsFragment : Fragment() {
 
         return binding.root
     }
+
+//    private fun setNotification(data: CryptoCurrency) {
+//        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+//            val name = data.symbol
+//            val descriptionText = data.name
+//            val importance = NotificationManager.IMPORTANCE_DEFAULT
+//            val channel = NotificationChannel(channelId,name,importance).apply {
+//                description = descriptionText
+//            }
+//            val notificationManager: NotificationManager
+//                = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+//        }
+////        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+////            notificationOnChannel = NotificationChannel(channelId,description,NotificationManager.IMPORTANCE_HIGH)
+////            notificationOnChannel.enableLights(true)
+////            notificationOnChannel.lightColor = Color.BLUE
+////            notificationOnChannel.enableVibration(false)
+////            notificationManager.createNotificationChannel(notificationOnChannel)
+////            builder = Notification.Builder(requireContext(),channelId)
+////                .setContentTitle(data.symbol)
+////                .setContentText(data.name)
+////                .setSmallIcon(R.drawable.banner)
+////        }
+//    }
 
     var watchList: ArrayList<String>? = null
     var watchListIsChecked = false
